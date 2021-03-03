@@ -9,8 +9,14 @@
 		WindowStyle="None"
 		ResizeMode="NoResize">
     <Grid>
-		<Grid.RowDefinitions>
-			
-		</Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>
