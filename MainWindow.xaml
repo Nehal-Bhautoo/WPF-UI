@@ -67,7 +67,7 @@
 
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <Image Width="50" Height="50"/>
+                <Image Width="50" Height="50" Source="images/launch.png"/>
                 <TextBlock Text="BunnyCo"
                            Foreground="White"
                            FontSize="20"
