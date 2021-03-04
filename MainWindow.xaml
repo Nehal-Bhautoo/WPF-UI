@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ModernUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="500" Width="900"
 		WindowStyle="None"
 		ResizeMode="NoResize"
         Background="#181735">
@@ -20,7 +20,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="#0F0F2D" Grid.ColumnSpan="2">
+        <Grid Background="#0F0F2D" 
+              Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -63,18 +65,53 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 FontFamily="fonts/#Dosis"/>
+
+            <Button Content="Start"
+                    Foreground="White"
+                    FontSize="10"
+                    FontWeight="Medium"
+                    Margin="0, 0, 10, 0"
+                    Grid.Column="12"
+                    Grid.ColumnSpan="2">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="fonts/#Dosis" />
+                        <Setter Property="Background" Value="#FE6584"/>
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF4C70"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" 
+                                Height="15"
+                                CornerRadius="8"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Margin="60">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0, 0 ,0, 20">
-                    <Image Width="50" Height="50" Source="images/launch.png"/>
+                    <Image Width="50" Height="50" Source="images/launch.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
                     <TextBlock Text="BunnyCo"
-                           Foreground="White"
-                           FontSize="20"
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="fonts/#Dosis"/>
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="Medium"
+                               VerticalAlignment="Center"
+                               FontFamily="fonts/#Dosis"
+                               Margin="10, 0, 0, 0"/>
                 </StackPanel>
                 <TextBlock Text="Customize"
                            Foreground="White"
@@ -97,7 +134,7 @@
                            VerticalAlignment="Center"
                            FontFamily="fonts/#Dosis"/>
             </StackPanel>
-            
+
             <StackPanel Orientation="Horizontal" Margin="0, 15, 0, 0">
                 <Button Content="Start"
                         Foreground="White"
@@ -161,5 +198,54 @@
                 </Button>
             </StackPanel>
         </StackPanel>
+        <Grid Grid.Column="1"
+              Grid.RowSpan="2"
+              Margin="160, -365, -610, 85"
+              Panel.ZIndex="-1">
+            <Grid.RenderTransform>
+                <RotateTransform Angle="50"/>
+            </Grid.RenderTransform>
+            <StackPanel Orientation="Horizontal"
+                        Margin="-350, 250, -255, -250">
+                <StackPanel>
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#3DDDC2"
+                            Margin="150, 0, 0, 0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#FC6586"
+                            Margin="0, 15, 0, 0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#383660"
+                            Margin="75, 15, 0, 0"
+                            CornerRadius="20"/>
+                </StackPanel>
+                <StackPanel>
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#3DDDC2"
+                            Margin="150, 0, 0, 0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#FC6586"
+                            Margin="0, 15, 0, 0"
+                            CornerRadius="20"/>
+
+                    <Border Width="700" 
+                            Height="35" 
+                            Background="#383660"
+                            Margin="75, 15, 0, 0"
+                            CornerRadius="20"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
